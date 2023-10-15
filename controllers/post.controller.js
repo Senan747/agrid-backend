@@ -9,6 +9,8 @@ function save(req, res) {
     price: req.body.price,
     address: req.body.address,
     userId: 1,
+    userName: req.body.user_name,
+    userEmail: req.body.user_email
   };
 
   const schema = {
@@ -17,6 +19,8 @@ function save(req, res) {
     categoryId: {type:"number", optional: false},
     price: {type:"number", optional: false},
     address: {type:"string", optional: false, max: "500"},
+    userName: {type:"string", optional: false, max: "100"},
+    userEmail: {type:"string", optional: false, max: "100"},
   }
 
   const v = new Validator();
