@@ -7,6 +7,7 @@ function save(req, res) {
     imageUrl: req.body.image_url,
     categoryId: req.body.category_id,
     price: req.body.price,
+    address: req.body.address,
     userId: 1,
   };
 
@@ -15,7 +16,7 @@ function save(req, res) {
     content: {type:"string", optional: false, max: "500"},
     categoryId: {type:"number", optional: false},
     price: {type:"number", optional: false},
-    
+    address: {type:"string", optional: false, max: "500"},
   }
 
   const v = new Validator();
