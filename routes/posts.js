@@ -4,9 +4,9 @@ const checkAuthMiddleware = require('../middleware/check-auth')
 
 const router = express.Router();
 
-router.post("/", checkAuthMiddleware.checkAuth, postsController.save);
+router.post("/", postsController.save);
 router.get("/:id", postsController.show);
 router.get("/", postsController.index);
-router.delete("/:id", checkAuthMiddleware.checkAuth, postsController.destroy)
+router.delete("/:id", postsController.destroy)
 
 module.exports = router;
