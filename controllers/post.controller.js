@@ -6,13 +6,16 @@ function save(req, res) {
     content: req.body.content,
     imageUrl: req.body.image_url,
     categoryId: req.body.category_id,
+    price: req.body.price,
     userId: 1,
   };
 
   const schema = {
     title: {type:"string", optional: false, max: "100"},
     content: {type:"string", optional: false, max: "500"},
-    categoryId: {type:"number", optional: false}
+    categoryId: {type:"number", optional: false},
+    price: {type:"number", optional: false},
+    
   }
 
   const v = new Validator();
