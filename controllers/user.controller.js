@@ -61,7 +61,7 @@ function login(req, res) {
                   email: user.email,
                   userId: user.id,
                 },
-                "secret",
+                process.env.JWT_KEY,
                 function (err, token) {
                   res.status(200).json({
                     message: "Auth is successful",
